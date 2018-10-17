@@ -18,8 +18,12 @@ public class CustomerService {
 		return custdao.findAll();
 	}
 
-	public CustomerDTO getByIdCustomer(String customerSk) {
+	public List<CustomerDTO> getByIdCustomer(String customerSk) {
 		return custdao.findByCustomerSk(customerSk);
+	}
+	
+	public void addCustomer(CustomerDTO customer) {
+		custdao.insertCustomer(customer);
 	}
 	
 }

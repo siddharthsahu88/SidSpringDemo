@@ -9,6 +9,8 @@ public interface CustomerDAO {
 
 	public List<CustomerDTO> findAll();
 
-	public CustomerDTO findByCustomerSk(String customerSk);
+	public List<CustomerDTO> findByCustomerSk(String customerSk);
+	
+	public void insertCustomer(CustomerDTO customer);
 
 }
