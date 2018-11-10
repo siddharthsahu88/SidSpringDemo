@@ -4,8 +4,8 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
@@ -24,19 +24,7 @@ public class OracleConfig {
 	@Value("${spring.datasource.url}")
 	private String url;
 
-	/*public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}*/
-
-	@Autowired
+	@Bean
 	public DataSource datasource() throws SQLException {
 
 		OracleDataSource ods = new OracleDataSource();
